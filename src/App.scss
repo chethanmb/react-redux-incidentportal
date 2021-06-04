@@ -1,0 +1,119 @@
+/* label {
+  display: block;
+  margin-top: 10px;
+} */
+.Link {
+}
+.btn:active {
+  transform: scale(0.8);
+}
+.MuiButton-contained:active {
+  transform: scale(0.98);
+}
+.form-select {
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  border-color: #3f51b5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #2e98fc;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar {
+  height: 38px;
+  position: sticky;
+  background-color: #3f51b5;
+  -webkit-box-shadow: 0px 3px 13px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 13px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.75);
+}
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff;
+  background-color: #233441;
+}
+
+.card-container.card {
+  max-width: 400px !important;
+  padding: 40px 40px;
+}
+
+/* .card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+} */
+
+.card {
+  color: #000000;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: auto;
+  background: #ffffff;
+  border: 1px solid #3b5f7a;
+  padding: 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 13px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 13px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.75);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.MuiPaper-elevation2 {
+  box-shadow: 0px 5px 3px 2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
