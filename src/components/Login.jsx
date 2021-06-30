@@ -10,6 +10,7 @@ import Icon from "@material-ui/core/Icon";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { Toast_1sec } from "../alerts/swal";
+import { FaUserAlt } from "react-icons/fa";
 
 import { login } from "../actions/auth";
 import { render } from "@testing-library/react";
@@ -33,6 +34,7 @@ const Login = (props) => {
   const [loading, setLoading] = useState(false);
 
   const { isLoggedIn } = useSelector((state) => state.auth);
+  const { user: currentUser } = useSelector((state) => state.auth);
   const { message } = useSelector((state) => state.message);
 
   const dispatch = useDispatch();
@@ -62,7 +64,11 @@ const Login = (props) => {
               icon: "success",
               title: "Signed in successfully",
             });
-            props.history.push("/profile");
+            if (currentUser.isAdmin === 0) {
+              props.history.push("/profile");
+            } else {
+              props.history.push("/admin-profile");
+            }
             // window.location.reload();
           })
           .catch(() => {
@@ -75,21 +81,20 @@ const Login = (props) => {
   };
 
   if (isLoggedIn) {
-    return <Redirect to="/profile" />;
+    if (currentUser.isAdmin === 0) {
+      return <Redirect to="/profile" />;
+    } else {
+      return <Redirect to="/admin-profile" />;
+    }
   }
 
   return (
     <div className="col-md-12">
       <div className="card card-container">
-        {/* <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        /> */}
-
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
+
             <Input
               type="text"
               className="form-control"

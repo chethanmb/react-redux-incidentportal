@@ -194,7 +194,7 @@ const Userdata = (props) => {
     setCustomerId(customerId);
     var Id = e.target.value;
     axios
-      .get(`http://localhost:1025/Users/locations/${Id}`)
+      .get(`http://localhost/api//Users/locations/${Id}`)
       .then((response) => {
         console.log(response.data);
         setLocationData(response.data);
@@ -240,6 +240,11 @@ const Userdata = (props) => {
           setSuccessful(false);
         });
     }
+  };
+
+  const modifyBtnClick = (e) => {
+    console.log("modify clicked");
+    props.history.push("/change-profile");
   };
 
   return (
@@ -335,6 +340,7 @@ const Userdata = (props) => {
           variant="contained"
           color="primary"
           type="submit"
+          onClick={modifyBtnClick}
         >
           Modify Data?
         </Button>

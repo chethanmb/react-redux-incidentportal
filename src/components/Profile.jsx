@@ -20,6 +20,7 @@ import Divider from "@material-ui/core/Divider";
 import "antd/dist/antd.css";
 import { Tabs } from "antd";
 import { getAllIncidents } from "../services/incident-service";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 
 import { Modal } from "antd";
 
@@ -41,6 +42,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { incident_data } from "../actions/incident";
+import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -68,7 +70,6 @@ const { TabPane } = Tabs;
 const Profile = () => {
   const incidentData = useSelector((state) => state.incident);
 
-  console.log(incidentData);
   const { user: currentUser } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
@@ -85,7 +86,7 @@ const Profile = () => {
       dispatch(incident_data(currentUser.id));
       setloadModal(true);
       setLoading(false);
-    }, 2500);
+    }, 300);
   }, [dispatch, currentUser.id]);
 
   const showModal = (e, rowData) => {
@@ -110,7 +111,13 @@ const Profile = () => {
         responseType: "blob",
       })
       .then((res) => {
-        fileDownload(res.data, attname);
+        // fileDownload(res.data, attname);
+        const url = window.URL.createObjectURL(new Blob([res.data]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", `${attname}`);
+        document.body.appendChild(link);
+        link.click();
       });
   };
 
@@ -236,7 +243,8 @@ const Profile = () => {
             ]}
             actions={[
               {
-                icon: "edit",
+                icon: VisibilityOutlinedIcon,
+
                 tooltip: "View",
                 onClick: (event, rowData) => {
                   showModal(event, rowData);

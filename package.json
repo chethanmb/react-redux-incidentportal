@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.15.6",
     "axios": "^0.21.1",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "4.6.0",
     "js-file-download": "^0.4.12",
     "material-table": "^1.69.3",
     "node-sass": "^6.0.0",
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,6 +51,8 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.8"
+    "html-webpack-plugin": "^5.3.1",
+    "redux-devtools-extension": "^2.13.8",
+    "webpack-cli": "^4.7.2"
   }
 }

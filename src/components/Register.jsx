@@ -161,7 +161,7 @@ const Register = (props) => {
     const customerId = e.target.value;
     setCustomerId(customerId);
     var Id = e.target.value;
-    axios.get(`http://localhost/Users/locations/${Id}`).then((response) => {
+    axios.get(`http://localhost/api/Users/locations/${Id}`).then((response) => {
       console.log(response.data);
       setLocationData(response.data);
     });
@@ -197,7 +197,7 @@ const Register = (props) => {
           setSuccessful(true);
           Toast.fire({
             icon: "success",
-            title: "Signed in successfully",
+            title: "Registration successful",
           });
           props.history.push("/login");
         })

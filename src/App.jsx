@@ -5,11 +5,14 @@ import { Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 import logo from "./logo.svg";
+import DXCLogo from "./DXC_Logo.png";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
 // import Home from "./components/Home";
 import Profile from "./components/Profile";
+import AdminProfile from "./components/Admin-Profile";
+import ChangeProfile from "./components/Change-Profile";
 import Create from "./components/Create";
 import Userdata from "./components/Userdata";
 // import BoardUser from "./components/BoardUser";
@@ -74,7 +77,14 @@ const App = () => {
               alt="logo"
               style={{ height: "50px", width: "50px" }}
             />
+            <img
+              src={DXCLogo}
+              className="dxc-logo"
+              alt="logo"
+              style={{ height: "45px", width: "150px" }}
+            />
           </Link>
+
           {currentUser ? (
             <Link
               to={"/profile"}
@@ -133,6 +143,8 @@ const App = () => {
             <Route exact path="/register" component={Register} />
 
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/admin-profile" component={AdminProfile} />
+            <Route exact path="/change-profile" component={ChangeProfile} />
             <Route exact path="/create" component={Create} />
             <Route exact path="/account" component={Userdata} />
             {/* <Route exact path="/modal/:id" component={Create} /> */}
