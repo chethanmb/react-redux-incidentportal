@@ -67,7 +67,9 @@ const Create = (props) => {
     // debugger;
     async function getApps() {
       await axios
-        .get("http://localhost/api/Incidents/get-app-list")
+        .get(
+          "http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/api/Incidents/get-app-list"
+        )
         .then((response) => {
           setAppdata(
             response.data
