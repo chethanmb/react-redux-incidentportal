@@ -107,9 +107,12 @@ const Profile = () => {
     var attid = singleIncident.attachId;
     var attname = singleIncident.attachmentName;
     axios
-      .get(`http://localhost/api/Incidents/attachments/${attid}`, {
-        responseType: "blob",
-      })
+      .get(
+        `http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/api/Incidents/attachments/${attid}`,
+        {
+          responseType: "blob",
+        }
+      )
       .then((res) => {
         // fileDownload(res.data, attname);
         const url = window.URL.createObjectURL(new Blob([res.data]));

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost/Users/";
+const API_URL =
+  "http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/Users/";
 
 const register = (
   username,
