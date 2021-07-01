@@ -35,12 +35,9 @@ const AdminProfile = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/Users/",
-        {
-          headers: authHeader(),
-        }
-      )
+      .get("http://localhost/Users/", {
+        headers: authHeader(),
+      })
       .then((response) => {
         let modUser = response.data.map((x) => {
           if (x.isAdmin === 1) {

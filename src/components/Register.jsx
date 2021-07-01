@@ -110,15 +110,11 @@ const Register = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get(
-        "http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/Users/get-cust-list"
-      )
-      .then((response) => {
-        console.log(response.data);
+    axios.get("http://localhost/Users/get-cust-list").then((response) => {
+      console.log(response.data);
 
-        setCustomerData(response.data);
-      });
+      setCustomerData(response.data);
+    });
   }, []);
 
   const onChangeUsername = (e) => {
@@ -165,14 +161,10 @@ const Register = (props) => {
     const customerId = e.target.value;
     setCustomerId(customerId);
     var Id = e.target.value;
-    axios
-      .get(
-        `http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/api/Users/locations/${Id}`
-      )
-      .then((response) => {
-        console.log(response.data);
-        setLocationData(response.data);
-      });
+    axios.get(`http://localhost/api/Users/locations/${Id}`).then((response) => {
+      console.log(response.data);
+      setLocationData(response.data);
+    });
   };
 
   const onChangeLoadLocations = (e) => {
