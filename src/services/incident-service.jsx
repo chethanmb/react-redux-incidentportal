@@ -2,10 +2,8 @@ import axios from "axios";
 import moment from "moment";
 import authHeader from "./auth-header";
 
-const API_URL =
-  "http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/api/Incidents/";
-const API_URL_2 =
-  "http://ec2-3-20-170-251.us-east-2.compute.amazonaws.com/api/api/Incidents/user/";
+const API_URL = "http://localhost/api/Incidents/";
+const API_URL_2 = "http://localhost/api/Incidents/user/";
 
 export const saveNewIncident = (fData) => {
   return axios
